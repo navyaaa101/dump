@@ -1,0 +1,99 @@
+Structured Query Language (SQL) is used to manage data in all relational databases like DB2, Oracle, SQL Server etc. 
+SQL standards are maintained by ISO. 
+While most database products comply with the ISO standard, they also offer additional proprietary features.
+
+Data Definition Language is used to specify the structure i.e. schema of a relational database. 
+DDL provides commands for creation, modification and deletion of various database objects like tables, views, stored procedures, indexes, constraints etc. 
+The output of DDL is placed in data dictionary which contains metadata i.e. data about data.
+
+Data Manipulation Language enables users to access or manipulate data in a relational database. 
+DML provides commands for retrieval, creation, deletion and modification of information in a database. 
+DML requires a user to specify what data is needed without specifying how to get it. 
+The database engine is left to figure out effective means of retrieving data.
+
+Data Control Language enables users to provide access to various database objects like views, tables, stored procedures etc.
+in a relational database. Typically only DBAs have access to grant and revoke privileges.
+Whenever a user submits a query, the database checks against the granted privileges and rejects the query if it is not authorized.
+
+Transaction Control Language specifies commands for beginning and ending a transaction. 
+A transaction consists of a sequence of SQL statements that are applied in an atomic (all or none) manner. 
+A commit makes all the changes applied by the transaction permanent on the database while a rollback undoes all the changed applied by the transaction.
+
+To summarize, Structured Query Language (SQL) provides four types of languages based on type of operation to be performed on a database. 
+These languages can be considered as subsets of SQL and logical groups only. 
+Physically commands for all these languages are executed from the same interface provided by the database.
+
+Data types :
+-Character data types
+-Integral data types 
+-Non-Integral data types
+-Miscellaneous data types 
+
+Operators :
+-Arithmetic operators
+-Comparison operators 
+-Logical operators 
+
+SQL supports SMALLINT, INTEGER and INT data types that are used for storing whole numbers. 
+Unlike other databases, Oracle does not define different size limits for them. 
+They are all treated internally to have 38 digits of precision.
+
+Precision and Scale of non-integral data type determines the maximum value that can be stored. 
+It also determines, how input data will be modified before storing the value.
+
+not equal to is represented as <>
+equal to is represented as =
+
+DELETE statement is used to delete records from a single table in a relational database. 
+The database system ensures that no constraints are violated during the execution of a delete statement. 
+Any violation of constraints results in failure of the statement.
+
+TRUNCATE statement can also be used to delete data from tables. 
+TRUNCATE statement deletes all records from the table as it does not support WHERE clause. 
+TRUNCATE statement is a faster option compared to DELETE when you have to delete all records from the table.
+
+SQL functions are built in modules provided by a database. 
+You can use them in data manipulation statements to perform calculations on data.
+All functions return a single value.
+
+Numeric functions are single row functions that accept a numeric value and return numeric output.
+Name	Syntax	                Function
+ABS	    ABS(value)	            Returns absolute value of a number
+ROUND	ROUND(value, digits)	Rounds the value to specified decimal digits
+CEIL	CEIL(value)	            Rounds up the fractional value to next integer
+FLOOR	FLOOR(value)	        Rounds down the fractional value to the lower integer
+
+Character functions work on character strings and can return a character string or a numeric value.
+Name	Syntax	                Function
+UPPER	UPPER(value)	        Converts value to upper case
+LOWER	LOWER(value)	        Converts value in lower case
+CONCAT	CONCAT(value1, value2)	Concatenates value1 and value2
+LENGTH	LENGTH(value)	        Returns the number of characters in value.
+
+Substring function is used to extract part of a string. It has the following syntax SUBSTR(value, start_position, length)
+
+Use conversion functions to convert data from one format to another.
+
+Name	    Syntax	                Function
+TO_CHAR	    TO_CHAR(value,format)	Converts a number or a date to a string. Use this function for formatting dates and numbers.
+TO_DATE	    TO_DATE(value,format)	Converts a string to a date.
+TO_NUMBER	TO_NUMBER(value,format)	Converts a string to a number.
+
+Database provides functions to determine the current time and to perform date operations like adding a specific duration to a date, finding time difference between two dates etc.
+Name	        Syntax	                    Function
+SYSDATE	        SYSDATE	                    Returns current date of System i.e. the host on which database server is installed.
+SYSTIMESTAMP	SYSTIMESTAMP	            Returns current timestamp of the System.
+ADD_MONTHS	    ADD_MONTHS(date, n)	        Adds n months to the given date.
+MONTHS_BETWEEN	MONTHS_BETWEEN(date1,date2)	Finds difference between two dates in months.
+
+Aggregate functions operate on multiple rows to return a single row. 
+Some aggregate functions like SUM (total), AVG (average) operates only on numeric columns while others like MIN (lowest value), MAX (highest value) and COUNT (number of rows) operate on all data types. 
+All aggregate functions ignore NULL values except COUNT(*).
+
+
+Name	Syntax	                Function
+NVL	    NVL(value1, value2)	    Substitutes value1 by value2 if value1 is NULL. The data type of value1 and value2 must be same.
+USER	USER	                Returns the current logged in user
+
+
+
