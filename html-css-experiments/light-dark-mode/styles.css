@@ -1,0 +1,9 @@
+body {
+    background-color: #ffffff;
+    color: #000000;
+}
+ 
+body[data-theme="dark"] {
+    background-color: #202020;
+    color: #ffffff;
+}
