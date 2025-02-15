@@ -1,0 +1,36 @@
+Find Range: Determine the range of the input (minimum and maximum values).
+Count Frequencies: Create a count array and count the frequency of each element.
+Calculate Positions: Modify the count array to store the cumulative count of elements.
+Sort Input: Use the cumulative count array to place elements in the correct position in the output array.
+Copy to Original Array: Copy the sorted elements back to the original array.
+
+Algorithm Counting_Sort( A[0 ... n-1] ):
+    i/p: array A
+    o/p: array s in increasing order
+    
+    # Step 1: Find the maximum value in A
+    max_val <- maximum(A)
+    
+    # Step 2: Initialize count array with zeros
+    count <- array of size max_val + 1 with all elements 0
+    
+    # Step 3: Store the count of each element
+    for i <- 0 to n-1 do
+        count[A[i]] <- count[A[i]] + 1
+    end for
+    
+    # Step 4: Store the cumulative count
+    for i <- 1 to max_val do
+        count[i] <- count[i] + count[i-1]
+    end for
+    
+    # Step 5: Create output array s
+    s <- array of size n
+    
+    # Step 6: Build the output array
+    for i <- n-1 downto 0 do
+        s[count[A[i]] - 1] <- A[i]
+        count[A[i]] <- count[A[i]] - 1
+    end for
+    
+    return s
